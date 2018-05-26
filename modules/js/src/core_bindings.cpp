@@ -74,6 +74,7 @@
 #include "opencv2/video/background_segm.hpp"
 #include "opencv2/objdetect.hpp"
 #include "opencv2/dnn.hpp"
+#include "opencv2/features2d.hpp"
 
 #include <emscripten/bind.h>
 

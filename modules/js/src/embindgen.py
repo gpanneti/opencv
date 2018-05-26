@@ -128,6 +128,27 @@ video = {'': ['CamShift', 'calcOpticalFlowFarneback', 'calcOpticalFlowPyrLK', 'c
 dnn = {'dnn_Net': ['setInput', 'forward'],
        '': ['readNetFromCaffe', 'readNetFromTensorflow', 'readNetFromTorch', 'readNetFromDarknet', 'blobFromImage']}
 
+features2d = {
+  '': ['drawKeypoints', 'FAST'],
+  'BRISK': ['create']#,
+  #'Feature2D': ['compute'] #, 'detect', 'detect2', 'compute', 'compute2', 'detectAndCompute', 'descriptorSize', 'descriptorType', 'defaultNorm', 'write', 'read', 'empty', 'getDefaultName']
+  }
+
+# features2d = {'': ['FAST'], \
+#               # 'Feature2D': ['Feature2D', 'detect', 'compute'], \
+#               'KeyPointsFilter': [],
+#               'Feature2D': ['Feature2D', 'detect', 'detect2', 'compute', 'compute2', 'detectAndCompute', 'descriptorSize', 'descriptorType', 'defaultNorm', 'write', 'read', 'empty', 'getDefaultName'], \
+#               'BRISK': ['create', 'create2', 'create3'],
+#               'ORB': ['create', 'setMaxFeatures', 'getMaxFeatures', 'setScaleFactor', 'getScaleFactor', 'setNLevels', 'getNLevels', 'setEdgeThreshold', 'getEdgeThreshold', 'setFirstLevel', 'getFirstLevel', 'setWTA_K', 'getWTA_K', 'setScoreType', 'getScoreType', 'setPatchSize', 'getPatchSize', 'setFastThreshold', 'getFastThreshold', 'getDefaultName'],
+#               'MSER': ['create', 'detectRegions', 'setDelta', 'getDelta', 'setMinArea', 'getMinArea', 'setMaxArea', 'getMaxArea', 'setPass2Only', 'getPass2Only', 'getDefaultName'],
+#               'FastFeatureDetector': ['create', 'setThreshold', \
+#                                     'getThreshold', 'setNonmaxSuppression', 'getNonmaxSuppression', 'setType', 'getType', 'getDefaultName'], \
+#               # 'FastFeatureDetector': ['FastFeatureDetector', 'create', 'detect', 'setThreshold', \
+#               #                       'getThreshold', 'setNonmaxSuppression', 'getNonmaxSuppression', 'setType', 'getType', 'getDefaultName'], \
+#               'AKAZE': ['create', 'setDescriptorType', 'getDescriptorType', 'setDescriptorSize', 'getDescriptorSize', \
+#                         'setDescriptorChannels', 'getDescriptorChannels', 'setThreshold', 'getThreshold', 'setNOctaves' \
+#                         'getNOctaves', 'setNOctaveLayers', 'getNOctaveLayers', 'setDiffusivity', 'getDiffusivity', 'getDefaultName']}
+
 def makeWhiteList(module_list):
     wl = {}
     for m in module_list:
@@ -138,7 +159,8 @@ def makeWhiteList(module_list):
                 wl[k] = m[k]
     return wl
 
-white_list = makeWhiteList([core, imgproc, objdetect, video, dnn])
+
+white_list = makeWhiteList([core, imgproc, objdetect, video, dnn, features2d])
 
 # Features to be exported
 export_enums = False
