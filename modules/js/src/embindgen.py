@@ -241,7 +241,7 @@ def handle_ptr(tp):
 
 def handle_vector(tp):
     if tp.startswith('vector_'):
-        tp = 'std::vector<' + "::".join(tp.split('_')[1:]) + '>'
+        tp = 'std::vector<' + handle_vector("_".join(tp.split('_')[1:])) + '>'
     return tp
 
 
