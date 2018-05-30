@@ -333,6 +333,7 @@ EMSCRIPTEN_BINDINGS(binding_utils)
     register_vector<cv::Point>("PointVector");
     register_vector<cv::Mat>("MatVector");
     register_vector<cv::Rect>("RectVector");
+    register_vector<cv::KeyPoint>("KeyPointVector");
 
     emscripten::class_<cv::Mat>("Mat")
         .constructor<>()
