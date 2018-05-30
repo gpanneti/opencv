@@ -459,6 +459,14 @@ public:
         THRESHOLD = 10000, NONMAX_SUPPRESSION=10001, FAST_N=10002,
     };
 
+    CV_WRAP std::vector<KeyPoint> test() {
+      KeyPoint kp = KeyPoint();
+
+      std::vector<KeyPoint> result = std::vector<KeyPoint>();
+      result.push_back(kp);
+      return result;
+    };
+
     CV_WRAP static Ptr<FastFeatureDetector> create( int threshold=10,
                                                     bool nonmaxSuppression=true,
                                                     int type=FastFeatureDetector::TYPE_9_16 );
