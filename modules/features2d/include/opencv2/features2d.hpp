@@ -137,7 +137,7 @@ public:
 
 /** @brief Abstract base class for 2D image feature detectors and descriptor extractors
 */
-class CV_EXPORTS_W Feature2D : public virtual Algorithm
+class CV_EXPORTS_W Feature2D : public Algorithm
 {
 public:
     virtual ~Feature2D();

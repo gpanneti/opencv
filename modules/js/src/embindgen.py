@@ -101,7 +101,8 @@ core = {'': ['absdiff', 'add', 'addWeighted', 'bitwise_and', 'bitwise_not', 'bit
              'max', 'mean', 'meanStdDev', 'merge', 'min', 'minMaxLoc', 'mixChannels', 'multiply', 'norm', 'normalize', \
              'perspectiveTransform', 'polarToCart', 'pow', 'randn', 'randu', 'reduce', 'repeat', 'setIdentity', 'setRNGSeed', \
              'solve', 'solvePoly', 'split', 'sqrt', 'subtract', 'trace', 'transform', 'transpose', 'vconcat'],
-        'Algorithm': []}
+        'Algorithm': [],
+        'KeyPoint': ['KeyPoint', 'convert', 'overlap']}
 
 imgproc = {'': ['Canny', 'GaussianBlur', 'Laplacian', 'HoughLines', 'HoughLinesP', 'HoughCircles', 'Scharr','Sobel', \
                 'adaptiveThreshold','approxPolyDP','arcLength','bilateralFilter','blur','boundingRect','boxFilter',\
@@ -130,8 +131,9 @@ dnn = {'dnn_Net': ['setInput', 'forward'],
 
 features2d = {
   '': ['drawKeypoints', 'FAST'],
-  'BRISK': ['create']#,
-  #'Feature2D': ['compute'] #, 'detect', 'detect2', 'compute', 'compute2', 'detectAndCompute', 'descriptorSize', 'descriptorType', 'defaultNorm', 'write', 'read', 'empty', 'getDefaultName']
+  'FastFeatureDetector': ['test', 'create', 'setThreshold', 'getThreshold', 'setNonmaxSuppression', 'getNonmaxSuppression', 'setType', 'getType', 'getDefaultName', 'AGAST'],
+  'BRISK': ['create'],
+  'Feature2D': ['detect', 'compute', 'detectAndCompute', 'descriptorSize', 'descriptorType', 'defaultNorm', 'write', 'read', 'empty', 'getDefaultName']
   }
 
 # features2d = {'': ['FAST'], \
@@ -871,7 +873,7 @@ class JSWrapperGenerator(object):
 
             if len(class_info.bases) == 1:
                 dv = "," + base.substitute(base=', '.join(class_info.bases),
-                                           isPoly = " ,true" if class_info.name=="Feature2D" else "")
+                                           isPoly = "")
 
             self.bindings.append(class_template.substitute(cpp_name=class_info.cname,
                                                            js_name=name,
