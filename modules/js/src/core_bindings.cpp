@@ -75,6 +75,7 @@
 #include "opencv2/objdetect.hpp"
 #include "opencv2/dnn.hpp"
 #include "opencv2/features2d.hpp"
+#include "opencv2/calib3d.hpp"
 
 #include <emscripten/bind.h>
 
