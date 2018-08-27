@@ -97,7 +97,7 @@ class Builder:
                "-DCPU_BASELINE=''",
                "-DCPU_DISPATCH=''",
                "-DCV_TRACE=OFF",
-               "-DBUILD_SHARED_LIBS=OFF",
+               "-DBUILD_SHARED_LIBS=ON",
                "-DWITH_1394=OFF",
                "-DWITH_VTK=OFF",
                "-DWITH_CUDA=OFF",
